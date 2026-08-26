@@ -8,7 +8,36 @@
 | **graph_no_ontology** | **0.4876** | **0.4876** | **0.1172** | **0.1034** | yes [0.062, 0.159] |
 | bm25_text | 0.4625 | 0.4625 | 0.1310 | 0.1172 | yes [0.075, 0.180] |
 
+## Extension experiments — dense retrieval + cross-model generation
+
+| System | Model | Correctness (ours) | Traceability F1 (ours) | Cross-entity leakage |
+|---|---|---|---|---|
+| **dense_bge** (bge-small-en) | Qwen3 | 0.1241 [0.069, 0.179] | 0.4317 [0.395, 0.465] | 32/435 (7.36%) |
+| **llama3gen** (KDAF+graph_ontology) | **llama3:latest** | **0.1448** [0.090, 0.197] | **0.5147** [0.479, 0.551] | — |
+
+> - **dense baselines KDAF?** No: synthetic bge-small-en dense retrieval reaches
+>   traceability F1 0.4317, *below* BM25 (0.4625) and well below KDAF (0.5147),
+>   yet leaks only half as much as BM25 (7.36% vs 16.78%). Dense semantic ranking
+>   respects entity boundaries better than lexical overlap, but the information-theoretic
+>   graph (CARP) adds traceable evidence beyond what either flat baseline offers.
+> - **KDAF is model-agnostic**: llama3 (0.1448 correctness, 0.5147 traceability) matches
+>   Qwen3's traceability exactly and *improves* correctness, showing the auditability
+>   advantage of KDAF does not depend on a specific generator LLM.
+
 ## Retrieval layer — M1–M8 (ours / author, all exact)
+
+### Baseline comparison (ours, from 145-question retrieval cache)
+
+| Metric | KDAF (graph_ontology) | dense (bge-small-en) | BM25 |
+|---|---|---|---|
+| Cross-entity leakage | 0/426 (0.00%) | 32/435 (7.36%) | 73/435 (16.78%) |
+| Provenance resolution failures | 0 | 0 | 0 |
+| Retrieval latency p50 | 13.2 ms | 39.7 ms | 1.2 ms |
+
+> Interpretation: dense semantic retrieval leaks roughly half as much as BM25
+> (7.36% vs 16.78%), yet the ontology-governed hard-company constraint in KDAF
+> still drives cross-entity leakage to zero—evidence that the hard constraint is
+> qualitatively stronger than semantic similarity alone.
 
 | Metric | KDAF | BM25 |
 |---|---|---|
