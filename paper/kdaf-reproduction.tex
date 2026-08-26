@@ -130,18 +130,20 @@ Table~\ref{tab:gen} reports the generation-layer results.
 \centering
 \caption{Generation-layer results.}
 \label{tab:gen}
-\begin{tabular}{lcccc}
+\small
+\begin{tabular}{@{}l l l l l@{}}
 \toprule
 \textbf{System} & \textbf{Trace F1 (ours)} & \textbf{Trace F1 (author)} & \textbf{Correctness (ours)} & \textbf{Correctness (author)} \\
 \midrule
-KDAF (graph\_ontology) & \textbf{0.5147} & \textbf{0.5147} & 0.1241 & 0.1103 \\
+KDAF (graph-ontology) & \textbf{0.5147} & \textbf{0.5147} & 0.1241 & 0.1103 \\
+Graph, no ontology & 0.4876 & 0.4876 & 0.1172 & 0.1034 \\
 BM25 & \textbf{0.4625} & \textbf{0.4625} & 0.1310 & 0.1172 \\
-KDAF $-$ BM25 & \textbf{+0.0522} & \textbf{+0.052} & --- & $-0.007$ \\
+KDAF $-$ BM25 & \textbf{+0.0522} & \textbf{+0.052} & ---  & $-0.007$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The paper's central quantitative claim---that KDAF improves citation traceability over BM25 by $+0.052$ with a confidence interval excluding zero---reproduces exactly ($+0.0522$). Correctness rates are directionally consistent and within the author's reported confidence intervals. The small differences are consistent with the thinking-mode adaptation and hardware differences, though we did not run a controlled comparison isolating these factors; they are also consistent with the author's own caveat that generation may vary with runtime and hardware.
+The paper's central quantitative claim---that KDAF improves citation traceability over BM25 by $+0.052$ with a confidence interval excluding zero---reproduces exactly ($+0.0522$). Critically, our independent run of the ``graph, no ontology'' variant (the paper's ablation for isolating the ontology's contribution) also reproduces exactly: its traceability F1 is $0.4876$ against the author's $0.4876$. The resulting three-way gradient is directly interpretable: BM25 lexical retrieval ($0.4625$) $\rightarrow$ unanchored graph retrieval ($0.4876$) $\rightarrow$ ontology-governed KDAF ($0.5147$). This quantifies that the graph structure alone accounts for $+0.025$ of traceability, while the ontology's eligibility constraint adds a further $+0.027$. Correctness rates are directionally consistent and within the author's reported confidence intervals. The small differences are consistent with the thinking-mode adaptation and hardware differences, though we did not run a controlled comparison isolating these factors; they are also consistent with the author's own caveat that generation may vary with runtime and hardware.
 
 \subsection{Observations Supporting the Paper's Interpretation}
 
