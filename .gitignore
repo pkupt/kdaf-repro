@@ -1,0 +1,10 @@
+# Exclude data, models, caches — never push benchmark content or model weights
+data/
+.cache/
+*.pdf
+*.zip
+*.jsonl
+__pycache__/
+*.pyc
+.venv/
+.ollama/
