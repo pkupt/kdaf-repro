@@ -1,0 +1,11 @@
+base_config: real_financebench_kdaf_carp_qwen_150.yaml
+run_id: real_financebench_kdaf_carp_llama3_score
+systems:
+- llama3gen
+paths:
+  questions: data/questions/real_financebench_kdaf_eval_145.jsonl
+  output_dir: runner/output/real_financebench_kdaf_carp_qwen_145
+  events_file: eval/real_financebench_kdaf_carp_qwen_145/events_llama3.jsonl
+  per_question_scores: eval/real_financebench_kdaf_carp_qwen_145/per_question_scores_llama3.csv
+  metrics_summary: eval/real_financebench_kdaf_carp_qwen_145/metrics_summary_llama3.csv
+  figures_dir: figures/real_financebench_kdaf_carp_qwen_145

@@ -1,0 +1,15 @@
+base_config: real_financebench_kdaf_carp_qwen_150.yaml
+run_id: real_financebench_kdaf_carp_qwen_full_go
+observability_reset_on_start: true
+systems:
+- graph_ontology
+retrieval_cache:
+  mode: replay
+  dir: eval/real_financebench_kdaf_carp_qwen_145/retrieval_cache
+paths:
+  questions: data/questions/real_financebench_kdaf_eval_145.jsonl
+  output_dir: runner/output/real_financebench_kdaf_carp_qwen_145
+  events_file: eval/real_financebench_kdaf_carp_qwen_145/events_full_go.jsonl
+  per_question_scores: eval/real_financebench_kdaf_carp_qwen_145/per_question_scores_full_go.csv
+  metrics_summary: eval/real_financebench_kdaf_carp_qwen_145/metrics_summary.csv
+  figures_dir: figures/real_financebench_kdaf_carp_qwen_145

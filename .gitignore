@@ -5,6 +5,8 @@ data/
 *.log
 *.zip
 *.jsonl
+# exception: per-question event logs are deliverable (Reproducibility Statement (c))
+!results/events/*.jsonl
 __pycache__/
 *.pyc
 .venv/
