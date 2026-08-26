@@ -1,7 +1,7 @@
 # Auditable by Construction, Reproduced: An Independent Replication of Ontology-Grounded Retrieval on FinanceBench
 
-**Status: Draft v0.1 (2026-08-26) — for arXiv cs.AI / cs.IR**
-**Author: Kevin Zhang (Mashang Consumer Finance Co., Ltd.)** — *pending author review*
+**Status: Draft v0.2 (2026-08-26) — for arXiv cs.AI / cs.IR**
+**Author: Kevin Zhang (Independent Researcher, Peking University alumni)** — *pending author review*
 **Original paper: Lunyakin (2026), "Auditable by Construction: An Ontology-Driven Framework for Trustworthy LLM Analytics in Enterprise Finance", arXiv:2608.20661**
 
 ---
