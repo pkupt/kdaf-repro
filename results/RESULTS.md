@@ -24,11 +24,15 @@
 > - **KDAF is model-agnostic**: llama3 (0.1448 correctness, 0.5147 traceability) matches
 >   Qwen3's traceability exactly and *improves* correctness, showing the auditability
 >   advantage of KDAF does not depend on a specific generator LLM.
-> - **Traceability is retriever-determined, generation-model-invariant**: on dense_bge,
->   swapping Qwen3 for Llama-3 leaves traceability F1 identical (0.4317) while
->   correctness shifts within noise (0.1241 → 0.1103). Combined with the identical
->   matching on graph_ontology (0.5147 for both models), this shows citation
->   traceability is a property of the retrieval pipeline, not the generator.
+> - **Traceability is retriever-determined, generation-model-invariant** *(by construction)*:
+>   on dense_bge, swapping Qwen3 for Llama-3 leaves traceability F1 identical (0.4317) while
+>   correctness shifts within noise (0.1241 → 0.1103). Combined with the identical matching on
+>   graph_ontology (0.5147 for both models), this shows citation traceability is a property of
+>   the retrieval pipeline, not the generator. Note: this identity is structural, not a
+>   coincidence — the author's runner records citations at retrieval time
+>   (`run_eval.py` L287: `citations = res.citations`), so the generator cannot affect them;
+>   the cross-model runs confirm it to the digit (per-question traceability identical on
+>   145/145 questions for both retriever pairs, while correctness flips on 8-9 questions).
 
 ## Retrieval layer — M1–M8 (ours / author, all exact)
 
