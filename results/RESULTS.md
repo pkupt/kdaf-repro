@@ -13,6 +13,7 @@
 | System | Model | Correctness (ours) | Traceability F1 (ours) | Cross-entity leakage |
 |---|---|---|---|---|
 | **dense_bge** (bge-small-en) | Qwen3 | 0.1241 [0.069, 0.179] | 0.4317 [0.395, 0.465] | 32/435 (7.36%) |
+| **dense_bge** (bge-small-en) | **llama3:latest** | 0.1103 [0.062, 0.159] | 0.4317 [0.395, 0.465] | 32/435 (7.36%) |
 | **llama3gen** (KDAF+graph_ontology) | **llama3:latest** | **0.1448** [0.090, 0.197] | **0.5147** [0.479, 0.551] | — |
 
 > - **dense baselines KDAF?** No: synthetic bge-small-en dense retrieval reaches
@@ -23,6 +24,11 @@
 > - **KDAF is model-agnostic**: llama3 (0.1448 correctness, 0.5147 traceability) matches
 >   Qwen3's traceability exactly and *improves* correctness, showing the auditability
 >   advantage of KDAF does not depend on a specific generator LLM.
+> - **Traceability is retriever-determined, generation-model-invariant**: on dense_bge,
+>   swapping Qwen3 for Llama-3 leaves traceability F1 identical (0.4317) while
+>   correctness shifts within noise (0.1241 → 0.1103). Combined with the identical
+>   matching on graph_ontology (0.5147 for both models), this shows citation
+>   traceability is a property of the retrieval pipeline, not the generator.
 
 ## Retrieval layer — M1–M8 (ours / author, all exact)
 
