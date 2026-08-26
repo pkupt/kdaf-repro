@@ -27,7 +27,7 @@ We report an independent replication of the Knowledge-Driven Analytics Framework
 
 \section{Introduction}
 
-Independent replication is a foundational, if under-rewarded, activity in machine learning research~\cite{repro_community}. A result that cannot be reproduced under changed hardware and software conditions carries limited scientific weight; a result that reproduces exactly---to the digit---carries considerably more. This paper reports such an exact reproduction.
+Independent replication is a foundational, if under-rewarded, activity in machine learning research. A result that cannot be reproduced under changed hardware and software conditions carries limited scientific weight; a result that reproduces exactly---to the digit---carries considerably more. This paper reports such an exact reproduction.
 
 Lunyakin~\cite{lunyakin2026} proposed the Knowledge-Driven Analytics Framework (KDAF), a six-stage methodology for building ontology-grounded knowledge systems for enterprise finance, together with the Context-Aware Relevance Propagation (CARP) algorithm for graph-based evidence retrieval. On a 145-question slice of FinanceBench~\cite{islam2023}, the paper reported a central result: ontology-grounded retrieval (KDAF) does not outperform sparse lexical retrieval (BM25)~\cite{robertson2009} on answer correctness---the reported difference was $-0.007$ with a 95\% confidence interval including zero---but does outperform it significantly on citation traceability F1 ($+0.052$, 95\% CI excluding zero), while never retrieving evidence from outside the question entity's company (0/426 vs.\ 16.8\% for BM25). The author argued that auditability, not accuracy, is the axis on which structured retrieval pays for its construction cost.
 
@@ -225,10 +225,10 @@ Islam, P., Kannappan, A., Kiela, D., Qian, R., Scherrer, N., \& Vidgen, B. (2023
 Robertson, S., \& Zaragoza, H. (2009). The Probabilistic Relevance Framework: BM25 and Beyond. \emph{Foundations and Trends in Information Retrieval}, 3(4), 333--389.
 
 \bibitem{edge2024}
-Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S., \& Larson, J. (2024). From Local to Global: A Graph RAG Approach to Query-Focused Summarization. \emph{arXiv:2404.16130}.
+Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S., Metropolitansky, D., Ness, R. O., \& Larson, J. (2024). From Local to Global: A Graph RAG Approach to Query-Focused Summarization. \emph{arXiv:2404.16130}.
 
 \bibitem{han2025}
-Han, X., et al. (2025). Graph Retrieval-Augmented Generation: A Survey. \emph{arXiv:2501.00309}.
+Han, H., Wang, Y., Shomer, H., Guo, K., Ding, J., Lei, Y., Halappanavar, M., Rossi, R. A., Mukherjee, S., Tang, X., He, Q., Hua, Z., Long, B., Zhao, T., Shah, N., Javari, A., Xia, Y., \& Tang, J. (2025). Retrieval-Augmented Generation with Graphs (GraphRAG). \emph{arXiv:2501.00309}.
 
 \bibitem{gao2023}
 Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., Dai, Y., Sun, J., \& Wang, H. (2023). Retrieval-Augmented Generation for Large Language Models: A Survey. \emph{arXiv:2312.10997}.
@@ -241,9 +241,6 @@ NIST. (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0). \e
 
 \bibitem{lee2004}
 Lee, J. D., \& See, K. A. (2004). Trust in Automation: Designing for Appropriate Reliance. \emph{Human Factors}, 46(1), 50--80.
-
-\bibitem{repro_community}
-Lasser, J. (2020). Generating an Assistive Ethic: The Case of the ML Reproducibility Challenge. \emph{arXiv:2004.01946}.
 
 \end{thebibliography}
 
