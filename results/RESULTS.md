@@ -5,6 +5,7 @@
 | System | Traceability F1 (ours) | Traceability F1 (author) | Correctness (ours) | Correctness (author) | In author CI? |
 |---|---|---|---|---|---|
 | graph_ontology (KDAF) | 0.5147 | 0.5147 | 0.1241 | 0.1103 | yes [0.069, 0.172] |
+| **graph_no_ontology** | **0.4876** | **0.4876** | **0.1172** | **0.1034** | yes [0.062, 0.159] |
 | bm25_text | 0.4625 | 0.4625 | 0.1310 | 0.1172 | yes [0.075, 0.180] |
 
 ## Retrieval layer — M1–M8 (ours / author, all exact)
