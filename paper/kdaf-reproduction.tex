@@ -13,7 +13,7 @@
 \title{Auditable by Construction, Reproduced: An Independent Replication of Ontology-Grounded Retrieval on FinanceBench}
 
 \author{Kevin Zhang\\
-  \small Independent Researcher (Peking University alumni)\\
+  \small Independent Researcher, Beijing, China\\
   \small GitHub: \url{https://github.com/pkupt}}
 
 \date{\today}
@@ -79,7 +79,7 @@ The pinned model digest is the crucial guarantee: identical weights remove the l
 
 We executed the author's pinned fetch-and-rebuild path (\texttt{rebuild\_financebench.py}), then the retrieval cache generation, then one-seed generation and scoring. Because decoding at temperature 0 is deterministic and the author's three seeds were byte-identical, a single seed (42) is sufficient to verify the generation layer.
 
-\subsection{Environment Adaptations (REPRO-ADAPT)}
+\subsection{Environment Adaptations (REPRO-ADAPT)}\label{sec:adapt}
 
 Four adaptations were required to run the author's code on Windows/CPU. We record them here for the community; none alters experimental logic.
 
@@ -141,7 +141,7 @@ KDAF $-$ BM25 & \textbf{+0.0522} & \textbf{+0.052} & --- & $-0.007$ \\
 \end{tabular}
 \end{table}
 
-The paper's central quantitative claim---that KDAF improves citation traceability over BM25 by $+0.052$ with a confidence interval excluding zero---reproduces exactly ($+0.0522$). Correctness rates are directionally consistent and within the author's reported confidence intervals; the small differences are attributable to the thinking-mode adaptation and hardware, and are consistent with the author's own caveat that generation may vary with runtime and hardware.
+The paper's central quantitative claim---that KDAF improves citation traceability over BM25 by $+0.052$ with a confidence interval excluding zero---reproduces exactly ($+0.0522$). Correctness rates are directionally consistent and within the author's reported confidence intervals. The small differences are consistent with the thinking-mode adaptation and hardware differences, though we did not run a controlled comparison isolating these factors; they are also consistent with the author's own caveat that generation may vary with runtime and hardware.
 
 \subsection{Observations Supporting the Paper's Interpretation}
 
@@ -172,7 +172,7 @@ Our fourth adaptation (Qwen3 thinking-mode disable) deserves emphasis: identical
 
 \section{Reproducibility Statement}
 
-All code, configuration, and deposited results come from the author's artifact (Zenodo 10.5281/zenodo.22022068, v1.0.0), unmodified except for the one-line \texttt{think: False} adaptation documented in Section~3.3. Our reproduction environment, adaptation scripts, and per-question event logs are available at \url{https://github.com/pkupt/kdaf-repro}. We commit to releasing: (a) the environment shim, (b) the metrics-comparison script used to verify exact behavioral equivalence, (c) our generation event logs for both systems, and (d) this manuscript's source.
+All code, configuration, and deposited results come from the author's artifact (Zenodo 10.5281/zenodo.22022068, v1.0.0), unmodified except for the one-line \texttt{think: False} adaptation documented in Section~\ref{sec:adapt}. Our reproduction environment, adaptation scripts, and per-question event logs are available at \url{https://github.com/pkupt/kdaf-repro}. We commit to releasing: (a) the environment shim, (b) the metrics-comparison script used to verify exact behavioral equivalence, (c) our generation event logs for both systems, and (d) this manuscript's source.
 
 \section{Conclusion}
 
