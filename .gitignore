@@ -2,6 +2,7 @@
 data/
 .cache/
 *.pdf
+*.log
 *.zip
 *.jsonl
 __pycache__/
